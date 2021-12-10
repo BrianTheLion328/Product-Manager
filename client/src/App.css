@@ -35,3 +35,6 @@
 .delete {
   background-color: pink;
 }
+label {
+  margin-right: 12px;
+}
