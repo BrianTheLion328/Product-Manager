@@ -1,10 +1,12 @@
 import './App.css';
-import Form from './components/Form'
+import React from 'react';
+import Main from './views/Main';
 
 function App() {
+
   return (
     <div className="App">
-      <Form />
+      <Main path="/products" />
     </div>
   );
 }

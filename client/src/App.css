@@ -3,3 +3,35 @@
   margin: 0;
   padding: 0;
 }
+.product-item p {
+  margin: 5px;
+}
+.product-item {
+  border: 1px solid black;
+  width: 20%;
+}
+.form-div {
+  margin: 8px 2px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 30%;
+}
+.form-input {
+  background-color: rgb(240, 240, 240);
+}
+.product-form {
+  margin-left: 40%;
+}
+.submit-button {
+  width: 75px;
+}
+.item-button {
+  padding: 1px 4px;
+  margin: 2px;
+}
+.edit {
+  background-color: lightblue;
+}
+.delete {
+  background-color: pink;
+}

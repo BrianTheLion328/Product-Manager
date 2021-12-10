@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Form = () => {
+const Form = (props) => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
+  const {products, setProducts} = props
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,37 +16,44 @@ const Form = () => {
     };
     axios
       .post("http://localhost:8000/api/products", newProduct)
-      .then((response) => console.log(response))
+      .then((response) => setProducts([...products, response.data]))
       .catch((err) => console.log(err));
+
+      setTitle('')
+      setPrice('')
+      setDescription('')
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="product-form" onSubmit={handleSubmit}>
       <h2>Product Form</h2>
       <div className="form-div">
-        Title:{" "}
+        <label>Title:{" "}</label>
         <input
+          className="form-input"
           type="text"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
         />
       </div>
       <div className="form-div">
-        Price:{" "}
+        <label>Price:{" "}</label>
         <input
+          className="form-input"
           type="text"
           onChange={(e) => setPrice(e.target.value)}
           value={price}
         />
       </div>
       <div className="form-div">
-        Description:{" "}
+        <label>Description:{" "}</label>
         <input
+          className="form-input"
           type="text"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         />
       </div>
-      <button type="submit">Submit</button>
+      <button className="submit-button" type="submit">Submit</button>
     </form>
   );
 };
