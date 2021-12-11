@@ -13,7 +13,7 @@ const Detail = (props) => {
     }, [props.id])
 
     return (
-        <div>
+        <div className="product-details">
             <p>Title: {product.title}</p>
             <p>Price: $ {product.price}</p>
             <p>Description: {product.description}</p>
