@@ -13,11 +13,15 @@ export default function Main() {
             })
     }, [])
 
+    const removeFromDom = productId => {
+        setProducts(products.filter(product => product._id !== productId) );
+    }
+
     return (
         <div>
             <Form products={products} setProducts={setProducts} />
             <hr />
-            <ProductList products={products} />
+            <ProductList products={products} removeFromDom={removeFromDom} />
         </div>
     )
 }
