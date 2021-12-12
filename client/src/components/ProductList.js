@@ -23,8 +23,6 @@ export default function ProductList(props) {
         return (
           <div className="product-item" key={index}>
             <p>{product.title}</p>
-            {/* <p>Price: $ {product.price}</p>
-            <p>Description: {product.description}</p> */}
             <button onClick={() => navigate(`/api/products/${product._id}`)} >Product Details</button>
             <button onClick={() => navigate(`/api/products/${product._id}/edit`)} className="item-button edit">Edit</button>
             <button onClick={() => deleteProduct(product._id)} className="item-button delete">Delete</button>
