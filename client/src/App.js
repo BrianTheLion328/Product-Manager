@@ -8,8 +8,9 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Welcome to the Product Manager Website!</h1>
       <Router >
-        <Main path="/api/products" />
+        <Main path="/api/" />
         <Detail path="/api/products/:id" />
       </Router >
     </div>

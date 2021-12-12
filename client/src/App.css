@@ -13,7 +13,8 @@
 .form-div {
   margin: 8px 2px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
   max-width: 30%;
 }
 .form-input {
@@ -40,4 +41,12 @@ label {
 }
 .product-details p {
   margin-bottom: 10px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.error-text{
+  color: red;
+  font-size: 14px;
 }

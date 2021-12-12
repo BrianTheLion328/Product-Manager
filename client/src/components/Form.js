@@ -6,6 +6,7 @@ const Form = (props) => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const {products, setProducts} = props
+  const [errors, setErrors] = useState({})
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +18,10 @@ const Form = (props) => {
     axios
       .post("http://localhost:8000/api/products", newProduct)
       .then((response) => setProducts([...products, response.data]))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setErrors(err.response.data.errors)
+      })
 
       setTitle('')
       setPrice('')
@@ -28,6 +32,11 @@ const Form = (props) => {
       <h2>Product Form</h2>
       <div className="form-div">
         <label>Title:{" "}</label>
+        {
+          errors.title ?
+          <span className="error-text">{errors.title.message}</span>
+          : null
+        }
         <input
           className="form-input"
           type="text"
